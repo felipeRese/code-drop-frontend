@@ -13,7 +13,9 @@ export default function LinkList({ links }: LinkListProps) {
     <ScrollArea className="w-[20rem] h-full bg-neutral-900 p-3 rounded-xl">
       <ul className="flex flex-col gap-2">
         {links &&
-          links.map((link: any) => <LinkItem key={link} href={link.url} />)}
+          links.map((link: { url: string }) => (
+            <LinkItem key={link.url} href={link.url} />
+          ))}
       </ul>
     </ScrollArea>
   );
